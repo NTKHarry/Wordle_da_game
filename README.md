@@ -36,4 +36,4 @@ Here are some potential improvements and ideas for future updates:
    - Implement a simple login system to track high scores or even offer a leaderboard.
 
 4. **Responsive Mobile Version**:
-   - Improve the mobile responsiveness for smaller devices. While it's usable, additional tweaks to the grid layout on small screens could improve the user exper
+   - Improve the mobile responsiveness for smaller devices. While it's usable, additional tweaks to the grid layout on small screens could improve the user experience
