@@ -1,0 +1,51 @@
+/* Thiết lập cho toàn bộ trang với nền tím */
+body {
+    background-color: #b48bf2;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh;
+    margin: 0;
+}
+
+.Game {
+    display : flex;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 90%;         /*chỉ cho nó rộng bằng 90% container cha */
+    max-height: 80%;
+}
+.Words {
+    margin-right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    
+}
+.row {
+    display: flex;
+    gap: 0.5em;
+}
+
+.cell {
+    width: 50px;          /* Điều chỉnh chiều rộng của ô nhập liệu */
+    height: 50px;         /* Điều chỉnh chiều cao của ô nhập liệu */
+    text-align: center;  /* Căn giữa chữ */
+    font-size: 2em;      /* Điều chỉnh kích thước chữ */
+    border: 2px solid #888; /* Viền của ô nhập liệu */
+    border-radius: 10px;  /* Viền cong */
+    outline: none;
+    transition: border 0.3s;
+}
+
+/* Tạo hiệu ứng khi ô nhập liệu được chọn */
+.cell:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(0, 128, 0, 0.3);
+}
+
+.cell {
+    text-transform: uppercase; /* Chữ viết hoa */
+}
