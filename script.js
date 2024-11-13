@@ -64,9 +64,9 @@ let input_row = function(row, index, rows){
                 row_filled++
                 handle_answer(word, row,index,rows)
             }
-            // if (e.key === "Backspace" && cell.value === "" && i > 0) {
-            //     cells[i - 1].focus();  // Di chuyển con trỏ về ô trước
-            // }
+            if (e.key === "Backspace" && cell.value === "" && i > 0) {
+                cells[i - 1].focus();  // Di chuyển con trỏ về ô trước
+            }
         });
     })
 
