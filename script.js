@@ -3,10 +3,25 @@ const nouns = [
     "house", "car", "computer", "book", "table", "chair",
     "pen", "phone", "tree", "dog", "cat", "school", 
     "city", "ocean", "mountain", "lamp", "window", "key", 
-    "pencil", "plane"
-]
+    "pencil", "plane", "river", "garden", "building", "flower", 
+    "street", "bridge", "shoe", "clock", "tower", "door",
+    "bed", "road", "bottle", "coin", "box", "card",
+    "shirt", "glass", "mirror", "camera", "brush", "hat",
+    "wall", "floor", "bag", "couch", "fan", "shop",
+    "tree", "flower", "field", "desk", "plate", "cup",
+    "bowl", "toy", "ring", "jewel", "rope", "paint",
+    "cable", "broom", "ladder", "lock", "sock", "pants",
+    "sink", "water", "earth", "air", "fruit", "star",
+    "moon", "sun", "cloud", "rain", "snow", "book",
+    "leaf", "branch", "nest", "sand", "wave", "shell",
+    "fish", "bird", "lion", "tiger", "bear", "wolf",
+    "fox", "horse", "sheep", "goat", "cow", "pig",
+    "train", "truck", "bike", "bus", "boat", "ship"
+];
+
 const grid = document.getElementById("wordle-grid")
-const check_button = document.getElementById("check")
+const check_button = document.getElementById("start")
+const endScreen = document.getElementById("EndScreen");
 
 
 
@@ -18,6 +33,7 @@ let start_game = function(){
     numrow= 6
     row_filled = 0
     grid.innerHTML = '';
+    endScreen.innerHTML = ''
     for(let i = 0; i<numrow; i++){
         let row = document.createElement("div")
         row.classList.add("row")
@@ -105,18 +121,42 @@ let handle_answer = function(a,row,index,rows){
         const cells = Array.from(rows[index+1].children)
         cells.forEach(cell => {
             cell.disabled = false;  // Bật mỗi ô trong hàng
+            
         });
+        cells[0].focus();
     }
     if (a === target_word) {
-        console.log("win")
-        grid.innerHTML = '';
+        create_endgame(true)
     }
-    else if(row_filled === numrow){
-        console.log("lose")
-        grid.innerHTML = '';
+    else if(row_filled === numrow){ 
+        create_endgame(false)
     }
     
 }
+
+let create_endgame = function(res) {
+    console.log("ok")
+        // Tạo một div con mới
+    const resultDiv = document.createElement("div");
+    resultDiv.classList.add("EndScreen_child"); // Bạn có thể thêm class nếu cần
+
+    // Thêm nội dung vào div con
+    resultDiv.innerHTML = `
+        <p>${res ? "yuo win" : "yuo ded"}</p>
+        <button id="playAgainButton">Play Again</button>
+    `;
+
+    // Thêm div con vào EndScreen
+    endScreen.appendChild(resultDiv);
+
+    // Hiển thị EndScreen
+    endScreen.style.display = "block";
+
+    // Thêm event listener cho nút "Play Again"
+    const playAgainButton = document.getElementById("playAgainButton");
+    playAgainButton.addEventListener("click", start_game);  // Đảm bảo bạn có hàm restartGame()
+};
+
 let main = function(){
     let rows = document.getElementsByClassName("row")
     rows = Array.from(rows)

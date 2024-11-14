@@ -3,6 +3,7 @@ body {
     background-color: #b48bf2;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center; 
     height: 100vh;
     margin: 0;
@@ -48,4 +49,65 @@ body {
 
 .cell {
     text-transform: uppercase; /* Chữ viết hoa */
+}
+
+.StartButton_div {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Khoảng cách giữa nút và div Game */
+}
+
+#start {
+    background: linear-gradient(to right, #3a8dde, #1e73be); /* Gradient xanh dương */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px; /* Góc bo tròn */
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#start:hover {
+    background: linear-gradient(to right, #1e73be, #3a8dde); /* Đổi gradient khi hover */
+}
+
+
+/* Màn hình kết thúc */
+.EndScreen_child {
+    display: block; /* Ẩn ban đầu */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    max-width: 400px;
+}
+
+.EndScreen_child p {
+    margin: 0;
+    font-size: 20px;
+}
+
+.EndScreen_child button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #3a8dde;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.EndScreen_child button:hover {
+    background-color: #1e73be;
 }

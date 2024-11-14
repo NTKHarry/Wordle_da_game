@@ -11,15 +11,17 @@
     <title>Wordle Game</title>
 </head>
 <body>
-    <input type="button" id = "check">
+    <div class = "StartButton_div"> 
+        <input type ="button" id = "start" value = "Start Game">
+    </div>
     <div class="Game">
         <!-- Div chứa ma trận các ô nhập liệu -->
         <div class="Words" id="wordle-grid"></div>
-
         <!-- Div chứa phần hướng dẫn -->
         <div class="instruction">
             <img src="rules.svg" alt="Game Rules">
         </div>
+        <div class = "EndScreen" id = "EndScreen"></div>
     </div>
 
     <!-- Liên kết tới file JavaScript bên ngoài -->
